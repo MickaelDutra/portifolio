@@ -1,0 +1,131 @@
+/* Colors
+#FF8F45
+#251605
+#A8B7AB
+*/
+
+/* estilo geral */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu", serif;
+}
+
+body{
+    background-color: #A8B7AB;
+    height: 100vh;
+}
+
+.container{
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.flex{
+    display: flex;
+}
+
+.btn-contato button{
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #FF8F45;
+    border-radius: 20px;
+    border: 0;
+    cursor: pointer;
+}
+
+.btn-contato button:hover{
+    box-shadow: 0px 0px 8px #ff8f45ef;
+    transform: scale(1.2);
+    transition: .2s;
+}
+
+/* estilo do cabeçalho */
+header{
+    padding: 40px 4%;
+}
+
+header > .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header a{
+    color: #251605;
+    text-decoration: none;
+    display: inline-block;
+}
+
+header a:hover{
+    color: #fff;
+    transform: scale(1.1);
+    transition: .2s;
+}
+
+header h1{
+    padding: 5px;
+}
+
+header h1:hover{
+    background-color: #251605;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+header nav ul{
+    list-style-type: none;
+}
+
+header nav ul li{
+    display: inline-block;
+    padding: 0 40px;
+}
+
+/* estilo do cabeçalho */
+
+/*topo do site*/
+
+section.topo-do-site{
+    padding: 40px 4%;
+}
+
+section.topo-do-site .flex{
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+}
+
+.topo-do-site h1{
+    color: #fff;
+    font-size: 42px;
+    line-height: 36px;
+    text-align: end;
+}
+
+.topo-do-site .txt-topo-site h1 span{
+    color: #FF8F45;
+}
+.topo-do-site .txt-topo-site p{
+    color: #251605;
+    margin: 36px 0;
+    font-size: 18px;
+    text-align: justify;
+}
+
+.topo-do-site .img-topo-site img{
+    position: relative;
+    animation: flutuar 2s ease-in-out infinite alternate;
+    border-radius: 400px;
+}
+
+@keyframes flutuar {
+    0%{
+        top: 0;
+    }
+    100%{
+        top: 30px;
+    }
+}
