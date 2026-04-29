@@ -1,0 +1,94 @@
+<section id="contato" class="contact">
+  <div class="container">
+
+    <div class="section-title">
+      <span class="label">// contato</span>
+      <h2>Vamos Trabalhar Juntos</h2>
+      <p>Tem um projeto em mente? Entre em contato e transformemos sua ideia em realidade.</p>
+    </div>
+
+    <div class="layout">
+
+      <div class="info-col">
+        <h3>Vamos conversar</h3>
+        <p>Estou sempre aberto a novas oportunidades, projetos freelance e colaborações. Não hesite em entrar em contato!</p>
+
+        <ul class="social-list">
+          @for (s of socials; track s.label) {
+            <li>
+              <a [href]="s.url" target="_blank" rel="noopener" class="social-item">
+                <div class="s-icon"><i class="bi {{ s.icon }}"></i></div>
+                <div class="s-text">
+                  <span class="s-label">{{ s.label }}</span>
+                  <span class="s-sub">{{ s.sub }}</span>
+                </div>
+                <i class="bi bi-arrow-right s-arrow"></i>
+              </a>
+            </li>
+          }
+        </ul>
+      </div>
+
+      <div class="form-col">
+
+        @if (status() === 'sent') {
+          <div class="feedback-state success">
+            <div class="fb-icon"><i class="bi bi-check-circle-fill"></i></div>
+            <h3>Mensagem Enviada!</h3>
+            <p>Obrigado pelo contato. Responderei em breve!</p>
+            <button class="btn btn-outline" (click)="reset()">Enviar outra mensagem</button>
+          </div>
+        } @else if (status() === 'error') {
+          <div class="feedback-state error">
+            <div class="fb-icon"><i class="bi bi-x-circle-fill"></i></div>
+            <h3>Erro ao Enviar</h3>
+            <p>Não foi possível enviar sua mensagem. Tente novamente ou entre em contato diretamente pelo e-mail.</p>
+            <div class="fb-actions">
+              <button class="btn btn-primary" (click)="reset()">Tentar novamente</button>
+              <a href="mailto:mickaeldutra.dev@gmail.com" class="btn btn-outline">Enviar e-mail direto</a>
+            </div>
+          </div>
+        } @else {
+          <form (ngSubmit)="submit()" [formGroup]="emailMessage" novalidate>
+
+            <div class="row-2">
+              <div class="field">
+                <label for="name">Nome</label>
+                <input id="name" type="text" name="name" formControlName="name"
+                       placeholder="Seu nome completo" required>
+              </div>
+              <div class="field">
+                <label for="email">E-mail</label>
+                <input id="email" type="email" name="email" formControlName="email"
+                       placeholder="seu@email.com" required>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="subject">Assunto</label>
+              <input id="subject" type="text" name="subject" formControlName="subject"
+                     placeholder="Sobre o que você quer falar?" required>
+            </div>
+
+            <div class="field">
+              <label for="msg">Mensagem</label>
+              <textarea id="msg" name="message" formControlName="message" rows="5"
+                        placeholder="Descreva seu projeto ou mensagem..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary send-btn"
+                    [disabled]="status() === 'sending' || emailMessage.invalid">
+              @if (status() === 'sending') {
+                <i class="bi bi-arrow-clockwise spinning"></i> Enviando…
+              } @else {
+                <i class="bi bi-send-fill"></i> Enviar Mensagem
+              }
+            </button>
+
+          </form>
+        }
+
+      </div>
+    </div>
+  </div>
+</section>

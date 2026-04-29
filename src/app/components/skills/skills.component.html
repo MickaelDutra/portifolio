@@ -1,0 +1,52 @@
+<section id="habilidades" class="skills">
+  <div class="container">
+
+    <div class="section-title">
+      <span class="label">// habilidades</span>
+      <h2>Minhas Habilidades</h2>
+      <p>Tecnologias e ferramentas que uso para criar soluções digitais de qualidade</p>
+    </div>
+
+    <div class="categories">
+      @for (cat of categories; track cat.title) {
+        <div class="cat-card">
+          <div class="cat-head">
+            <div class="cat-icon"><i class="bi {{ cat.icon }}"></i></div>
+            <h3>{{ cat.title }}</h3>
+          </div>
+
+          <ul class="skill-list">
+            @for (skill of cat.skills; track skill.name) {
+              <li class="skill-row">
+                <div class="skill-meta">
+                  <span class="skill-name">
+                    <i class="bi {{ skill.icon }}"></i>{{ skill.name }}
+                  </span>
+                  <span class="skill-pct">{{ skill.level }}%</span>
+                </div>
+                <div class="bar-track">
+                  <div
+                    #bar
+                    class="bar-fill"
+                    [attr.data-level]="skill.level"
+                    style="width: 0%"
+                  ></div>
+                </div>
+              </li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+
+    <div class="extras">
+      <h4>Outras tecnologias</h4>
+      <div class="tag-cloud">
+        @for (tag of extras; track tag) {
+          <span class="tag">{{ tag }}</span>
+        }
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,136 @@
+header {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 900;
+  padding: 22px 0;
+  transition: padding var(--transition), background var(--transition), box-shadow var(--transition);
+
+  &.scrolled {
+    background: rgba(8, 8, 18, 0.88);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 12px 0;
+    box-shadow: 0 1px 0 var(--color-border), 0 8px 32px rgba(0,0,0,.4);
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+.logo {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.375rem;
+  font-weight: 700;
+  background: none;
+  border: none;
+  color: var(--color-text);
+  cursor: pointer;
+  padding: 4px;
+  margin-right: auto;
+
+  .brackets { color: var(--color-primary-lt); }
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+
+  li button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-muted);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+
+    &:hover {
+      color: var(--color-text);
+      background: rgba(124, 58, 237, 0.1);
+    }
+  }
+}
+
+.hire-btn { flex-shrink: 0; }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+
+  span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--color-text);
+    border-radius: 2px;
+    transition: var(--transition);
+  }
+
+  &.open {
+    span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  }
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: min(300px, 80vw);
+  height: 100dvh;
+  background: var(--bg-card);
+  border-left: 1px solid var(--color-border);
+  z-index: 950;
+  transition: right 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 80px 24px 40px;
+  display: flex;
+  flex-direction: column;
+
+  &.open { right: 0; }
+
+  ul { display: flex; flex-direction: column; gap: 4px; }
+
+  li button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text);
+    font-size: 1.0625rem;
+    font-weight: 500;
+    padding: 12px 16px;
+    border-radius: var(--radius-md);
+    width: 100%;
+    text-align: left;
+    transition: var(--transition);
+
+    &:hover { background: rgba(124, 58, 237, 0.1); color: var(--color-primary-lt); }
+  }
+}
+
+.drawer-cta { width: 100%; justify-content: center; margin-top: 12px; }
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  backdrop-filter: blur(4px);
+  z-index: 940;
+}
+
+@media (max-width: 768px) {
+  .nav-links, .hire-btn { display: none; }
+  .hamburger { display: flex; }
+}

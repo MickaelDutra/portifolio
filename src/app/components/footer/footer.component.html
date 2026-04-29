@@ -1,0 +1,34 @@
+<footer>
+  <div class="container">
+
+    <div class="top-row">
+      <button class="logo" (click)="scrollTop()">
+        <span class="br">&lt;</span>MD<span class="br">/&gt;</span>
+      </button>
+
+      <nav class="footer-nav">
+        <a href="#sobre">Sobre</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <div class="socials">
+        @for (s of socials; track s.label) {
+          <a [href]="s.url" target="_blank" rel="noopener" [attr.aria-label]="s.label">
+            <i class="bi {{ s.icon }}"></i>
+          </a>
+        }
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="bottom-row">
+      <p>
+        &copy; {{ year }} Mickael Dutra. Todos os direitos reservados.
+      </p>
+    </div>
+
+  </div>
+</footer>

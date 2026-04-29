@@ -1,0 +1,68 @@
+<section id="projetos" class="projects">
+  <div class="container">
+
+    <div class="section-title">
+      <span class="label">// portfólio</span>
+      <h2>Projetos em Destaque</h2>
+      <p>Uma seleção dos meus melhores trabalhos e projetos pessoais</p>
+    </div>
+
+    <div class="grid">
+      @for (p of projects; track p.title) {
+        <article class="card">
+
+          <div class="thumb">
+            <img [src]="p.image" [alt]="p.title" loading="lazy">
+            <div class="thumb-overlay">
+              <div class="overlay-btns">
+                @if (p.githubUrl) {
+                  <a [href]="p.githubUrl" target="_blank" rel="noopener" class="ov-btn">
+                    <i class="bi bi-github"></i> Código
+                  </a>
+                }
+                @if (p.liveUrl) {
+                  <a [href]="p.liveUrl" target="_blank" rel="noopener" class="ov-btn primary">
+                    <i class="bi bi-box-arrow-up-right"></i> Ver Site
+                  </a>
+                }
+              </div>
+            </div>
+          </div>
+
+          <div class="body">
+            <h3>{{ p.title }}</h3>
+            <p>{{ p.description }}</p>
+            <div class="tags">
+              @for (t of p.tags; track t) {
+                <span class="tag">{{ t }}</span>
+              }
+            </div>
+          </div>
+
+          <div class="foot">
+            @if (p.githubUrl) {
+              <a [href]="p.githubUrl" target="_blank" rel="noopener" class="foot-link" title="Ver código">
+                <i class="bi bi-github"></i>
+              </a>
+            }
+            @if (p.liveUrl) {
+              <a [href]="p.liveUrl" target="_blank" rel="noopener" class="foot-link" title="Abrir site">
+                <i class="bi bi-box-arrow-up-right"></i>
+              </a>
+            }
+            <span class="foot-spacer"></span>
+            <span class="foot-label">{{ p.tags[0] }}</span>
+          </div>
+
+        </article>
+      }
+    </div>
+
+    <div class="cta-row">
+      <a href="https://github.com/MickaelDutra" target="_blank" rel="noopener" class="btn btn-outline">
+        <i class="bi bi-github"></i> Ver todos os projetos no GitHub
+      </a>
+    </div>
+
+  </div>
+</section>

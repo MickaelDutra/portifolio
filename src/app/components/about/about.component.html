@@ -1,0 +1,53 @@
+<section id="sobre" class="about">
+  <div class="container">
+    <div class="about-grid">
+
+      <div class="img-col">
+        <div class="img-frame">
+          <img src="images/foto_portifolio.jpg" alt="Mickael Dutra">
+          <div class="exp-badge">
+            <span class="exp-num">3+</span>
+            <span class="exp-lbl">Anos de<br>Experiência</span>
+          </div>
+        </div>
+        <div class="dots" aria-hidden="true"></div>
+      </div>
+
+      <div class="text-col">
+        <span class="pill">Sobre Mim</span>
+
+        <h2>Criando experiências digitais que fazem a diferença</h2>
+
+        <p>
+          Sou Mickael Dutra, desenvolvedor Full Stack apaixonado por tecnologia.
+          Tenho experiência em construir soluções web que unem performance técnica
+          com design moderno e intuitivo.
+        </p>
+        <p>
+          Meu foco é transformar ideias em produtos digitais funcionais e atraentes,
+          colocando sempre a experiência do usuário em primeiro lugar. Trabalho com
+          as tecnologias mais modernas do mercado.
+        </p>
+
+        <div class="stats">
+          @for (s of stats; track s.label) {
+            <div class="stat">
+              <span class="stat-val">{{ s.value }}</span>
+              <span class="stat-lbl">{{ s.label }}</span>
+            </div>
+          }
+        </div>
+
+        <div class="about-cta">
+          <button class="btn btn-primary" (click)="scrollTo('#contato')">
+            <i class="bi bi-chat-dots-fill"></i> Vamos Conversar
+          </button>
+          <a href="https://github.com/MickaelDutra" target="_blank" rel="noopener" class="btn btn-outline">
+            <i class="bi bi-github"></i> GitHub
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
