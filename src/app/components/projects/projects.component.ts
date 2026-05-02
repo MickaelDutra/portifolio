@@ -41,7 +41,7 @@ export class ProjectsComponent {
         'Algoritimo desenvolvido para encontrar padrão de pesos entre produtos semelhantes.',
       image: 'images/centro_distribuicao_pesos.jpeg',
       tags: ['JavaScript'],
-      liveUrl: 'https://github.com/MickaelDutra/busca_pesos_por_ean',
+      githubUrl: 'https://github.com/MickaelDutra/busca_pesos_por_ean',
     },
     {
       title: 'Ebac Talks',
@@ -49,7 +49,15 @@ export class ProjectsComponent {
         'Plataforma desenvolvida para estudos.',
       image: 'images/ebach_talks.png',
       tags: ['HTML', 'JavaScript', 'CSS'],
-      liveUrl: 'https://github.com/MickaelDutra/ebac_tech_talks',
+      githubUrl: 'https://github.com/MickaelDutra/ebac_tech_talks',
+    },
+    {
+      title: 'CAR Monitor',
+      description:
+        'Aplicação desenvolvida em Angular e Java para notificar usuários sobre relatos de desmatamento em imóveis rurais cadastrados através de CAR.',
+      image: 'images/CAR-monitor.png',
+      tags: ['Angular', 'Java', 'TS'],
+      githubUrl: 'https://github.com/MickaelDutra/car-monitor',
     }
   ];
 }
