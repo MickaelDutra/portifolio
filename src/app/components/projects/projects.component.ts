@@ -54,7 +54,7 @@ export class ProjectsComponent {
     {
       title: 'CAR Monitor',
       description:
-        'Aplicação desenvolvida em Angular e Java para notificar usuários sobre relatos de desmatamento em imóveis rurais cadastrados através de CAR.',
+        'Aplicação desenvolvida em Angular e Java para notificar usuários sobre relatos de desmatamento em imóveis rurais cadastrados através de CAR. (repositório privado)',
       image: 'images/CAR-monitor.png',
       tags: ['Angular', 'Java', 'TS'],
       githubUrl: 'https://github.com/MickaelDutra/car-monitor',
