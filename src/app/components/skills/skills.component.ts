@@ -30,11 +30,11 @@ export class SkillsComponent implements AfterViewInit {
       title: 'Backend & Ferramentas',
       icon: 'bi-terminal',
       skills: [
+        { name: 'Java Springboot',     icon: 'bi-filetype-java',         level: 89 },
         { name: 'Node.js',   icon: 'bi-braces-asterisk', level: 70 },
         { name: 'Git / GitHub', icon: 'bi-github',       level: 88 },
         { name: 'SQL',       icon: 'bi-database',         level: 72 },
         { name: 'REST APIs', icon: 'bi-plug',             level: 80 },
-        { name: 'Linux',     icon: 'bi-terminal',         level: 65 },
         { name: 'Docker',    icon: 'bi-box',              level: 70 },
       ] satisfies Skill[],
     },
